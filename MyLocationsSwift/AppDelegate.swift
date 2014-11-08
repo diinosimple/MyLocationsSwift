@@ -9,6 +9,14 @@
 import UIKit
 import CoreData
 
+let MyManagedObjectContextSaveDidFailNotification = "MyManagedObjectContextSaveDidFailNotification"
+
+func fatalCoreDataError(error: NSError?) {
+    if let error = error {
+        println("*** Fatal error: \(error), \(error.userInfo)")
+    }
+    NSNotificationCenter.defaultCenter().postNotificationName ( MyManagedObjectContextSaveDidFailNotification, object: error)
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -58,8 +66,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         tabBarViewControllers[0] as CurrentLocationViewController
                         currentLocationViewController.managedObjectContext = managedObjectContext
         }
+            
+        listenForFatalCoreDataNotifications()
                     
         return true
+    }
+        
+    func listenForFatalCoreDataNotifications() {
+        // 1
+        NSNotificationCenter.defaultCenter().addObserverForName( MyManagedObjectContextSaveDidFailNotification, object: nil, queue: NSOperationQueue.mainQueue(),usingBlock: { notification in
+                        
+            //2
+            let alert = UIAlertController(title: "Internal Error", message: "There was a fatal error in the app and it cannot continue.\n\n" + "Press OK to terminate the app. Sorry for the inconvenience.", preferredStyle: .Alert)
+            
+            // 3
+            let action = UIAlertAction(title: "OK", style: .Default) { _ in
+                let exception = NSException(name: NSInternalInconsistencyException,
+                        reason: "Fatal Core Data error", userInfo: nil)
+                exception.raise()
+            }
+            alert.addAction(action)
+            
+            // 4
+            self.viewControllerForShowingAlert().presentViewController(alert, animated: true, completion: nil)
+        })
+    }
+    
+    // 5
+    func viewControllerForShowingAlert() -> UIViewController {
+        let rootViewController = self.window!.rootViewController!
+        if let presentedViewController = rootViewController.presentedViewController {
+            return presentedViewController
+        } else {
+            return rootViewController
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
