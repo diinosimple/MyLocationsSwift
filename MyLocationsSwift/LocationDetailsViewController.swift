@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import CoreData
 
 private let dateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
@@ -30,12 +31,18 @@ class LocationDetailsViewController: UITableViewController {
     var descriptionText = ""
     var categoryName = "No Category"
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     @IBAction func done() {
         //println("Description '\(descriptionText)'")
         //dismissViewControllerAnimated(true, completion: nil)
         let hudView = HudView.hudInView(navigationController!.view,
             animated: true)
         hudView.text = "Tagged"
+        
+        afterDelay(0.6, {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     @IBAction func cancel() {
         dismissViewControllerAnimated(true, completion: nil)
