@@ -341,7 +341,7 @@
         <!--Map-->
         <scene sceneID="6qJ-7G-mtt">
             <objects>
-                <viewController id="yRZ-Lv-hdh" sceneMemberID="viewController">
+                <viewController id="yRZ-Lv-hdh" customClass="MapViewController" customModule="MyLocationsSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Hm-60-pI1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,8 +355,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Map" id="8H7-bv-sJ6">
-                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="fp0-9l-60d"/>
-                                        <barButtonItem key="rightBarButtonItem" title="User" id="dXs-qU-4Xf"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="fp0-9l-60d">
+                                            <connections>
+                                                <action selector="showLocations" destination="yRZ-Lv-hdh" id="nzD-qt-xa1"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="User" id="dXs-qU-4Xf">
+                                            <connections>
+                                                <action selector="showUser" destination="yRZ-Lv-hdh" id="aQt-OR-xgA"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -364,6 +372,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="AbO-j0-Vnd"/>
+                    <connections>
+                        <outlet property="mapView" destination="jx5-Re-lrL" id="0l5-fj-Pb1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JLg-gk-o7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
