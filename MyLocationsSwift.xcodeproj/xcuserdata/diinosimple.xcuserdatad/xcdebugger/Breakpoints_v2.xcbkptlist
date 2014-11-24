@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyLocationsSwift/AppDelegate.swift"
-            timestampString = "437807845.484308"
+            timestampString = "438524437.003854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "applicationWillResignActive(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -33,6 +33,108 @@
             endingLineNumber = "123"
             landmarkName = "mapView(_:viewForAnnotation:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyLocationsSwift/CurrentLocationViewController.swift"
+            timestampString = "438533723.162707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "CurrentLocationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyLocationsSwift.CurrentLocationViewController.latitudeTextLabel.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
+                  moduleName = "MyLocationsSwift"
+                  urlString = "file:///Users/diinosimple/github/MyLocationsSwift/MyLocationsSwift/CurrentLocationViewController.swift"
+                  timestampString = "438531719.999827"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyLocationsSwift.CurrentLocationViewController.latitudeTextLabel.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
+                  moduleName = "MyLocationsSwift"
+                  urlString = "file:///Users/diinosimple/github/MyLocationsSwift/MyLocationsSwift/CurrentLocationViewController.swift"
+                  timestampString = "438531720.00066"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyLocationsSwift.CurrentLocationViewController.latitudeTextLabel.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UILabel&gt;"
+                  moduleName = "MyLocationsSwift"
+                  urlString = "file:///Users/diinosimple/github/MyLocationsSwift/MyLocationsSwift/CurrentLocationViewController.swift"
+                  timestampString = "438531720.001201"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyLocationsSwift.CurrentLocationViewController.init (MyLocationsSwift.CurrentLocationViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; MyLocationsSwift.CurrentLocationViewController"
+                  moduleName = "MyLocationsSwift"
+                  urlString = "file:///Users/diinosimple/github/MyLocationsSwift/MyLocationsSwift/CurrentLocationViewController.swift"
+                  timestampString = "438531720.001723"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyLocationsSwift.CurrentLocationViewController.init (MyLocationsSwift.CurrentLocationViewController.Type)() -&gt; MyLocationsSwift.CurrentLocationViewController"
+                  moduleName = "MyLocationsSwift"
+                  urlString = "file:///Users/diinosimple/github/MyLocationsSwift/MyLocationsSwift/CurrentLocationViewController.swift"
+                  timestampString = "438531720.002261"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyLocationsSwift.CurrentLocationViewController.init (MyLocationsSwift.CurrentLocationViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; MyLocationsSwift.CurrentLocationViewController"
+                  moduleName = "MyLocationsSwift"
+                  urlString = "file:///Users/diinosimple/github/MyLocationsSwift/MyLocationsSwift/CurrentLocationViewController.swift"
+                  timestampString = "438531720.002758"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

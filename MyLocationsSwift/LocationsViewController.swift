@@ -40,6 +40,12 @@ class LocationsViewController: UITableViewController {
         super.viewDidLoad()
         performFetch()
         navigationItem.rightBarButtonItem = editButtonItem()
+        
+        //This makes the table view itself black but does not alter the cells.
+        tableView.backgroundColor = UIColor.blackColor()
+        tableView.separatorColor = UIColor(white: 1.0, alpha:0.2)
+        tableView.indicatorStyle = .White
+        
     }
     
     func performFetch() {
@@ -54,6 +60,7 @@ class LocationsViewController: UITableViewController {
     }
     
     // MARK: - UITableViewDataSource
+
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
@@ -76,6 +83,7 @@ class LocationsViewController: UITableViewController {
             
         if editingStyle == .Delete {
             let location = fetchedResultsController.objectAtIndexPath(indexPath) as Location
+            location.removePhotoFile()
             managedObjectContext.deleteObject(location)
             
             var error: NSError?
@@ -92,7 +100,8 @@ class LocationsViewController: UITableViewController {
     override func tableView(tableView: UITableView,
                 titleForHeaderInSection section: Int) -> String? {
         let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
-        return sectionInfo.name
+        return sectionInfo.name!.uppercaseString
+                    
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -108,6 +117,35 @@ class LocationsViewController: UITableViewController {
                 controller.locationToEdit = location
             }
         }
+    }
+    
+    // MARK: - UITableViewDelegate
+    override func tableView(tableView: UITableView,
+        viewForHeaderInSection section: Int) -> UIView? {
+        
+        let labelRect = CGRect(x: 15, y: tableView.sectionHeaderHeight - 14, width: 300, height: 14)
+            
+        let label = UILabel(frame: labelRect)
+        label.font = UIFont.boldSystemFontOfSize(11)
+        
+        label.text = tableView.dataSource!.tableView!(tableView, titleForHeaderInSection: section)
+            
+        label.textColor = UIColor(white: 1.0, alpha: 0.4)
+        label.backgroundColor = UIColor.clearColor()
+            
+        let separatorRect = CGRect(x: 15,y: tableView.sectionHeaderHeight - 0.5,
+                width: tableView.bounds.size.width - 15,
+                height: 0.5)
+            
+        let separator = UIView(frame: separatorRect)
+        separator.backgroundColor = tableView.separatorColor
+        
+        let viewRect = CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.sectionHeaderHeight)
+        let view = UIView(frame: viewRect)
+        view.backgroundColor = UIColor(white: 0, alpha: 0.85)
+        view.addSubview(label)
+        view.addSubview(separator)
+        return view
     }
 }
 

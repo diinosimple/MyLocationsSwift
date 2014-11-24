@@ -26,6 +26,23 @@ class CategoryPickerViewController: UITableViewController {
     
     var selectedIndexPath = NSIndexPath()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.backgroundColor = UIColor.blackColor()
+        tableView.separatorColor = UIColor(white: 1.0, alpha: 0.2)
+        tableView.indicatorStyle = .White
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell,
+            forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.blackColor()
+        cell.textLabel.textColor = UIColor.whiteColor()
+        cell.textLabel.highlightedTextColor = cell.textLabel.textColor
+        let selectionView = UIView(frame: CGRect.zeroRect)
+        selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
+        cell.selectedBackgroundView = selectionView
+    }
+    
     // MARK: - UITableViewDataSource
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +84,7 @@ class CategoryPickerViewController: UITableViewController {
         if segue.identifier == "PickedCategory" {
             let cell = sender as UITableViewCell
             if let indexPath = tableView.indexPathForCell(cell) {
+                println("CategoryName = \(categories[indexPath.row])")
                 selectedCategoryName = categories[indexPath.row]
             }
         }
