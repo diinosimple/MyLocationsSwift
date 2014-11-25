@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyLocationsSwift/CurrentLocationViewController.swift"
-            timestampString = "438533723.162707"
+            timestampString = "438614112.97431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "CurrentLocationViewController"
             landmarkType = "3">
             <Locations>
